@@ -1,0 +1,20 @@
+body {
+text-align: center;
+}
+
+header {
+    background-color: #a9421d ;
+    color: white;
+    padding: 20px 35px;
+    background-position: 80%;
+  background-attachment:fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position:sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 9999;
+}
