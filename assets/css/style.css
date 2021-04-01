@@ -18,3 +18,42 @@ header {
   top: 0;
   z-index: 9999;
 }
+
+
+
+
+#inspSect {
+  border: solid black 1px;
+  padding: 50px 0px;
+  margin-bottom: 100px;
+}
+
+#inspTitle {
+  padding-bottom: 45px;
+}
+
+#inspBtn {
+  margin: 45px 0px;
+}
+
+#inspImgs {
+  flex-wrap: wrap;
+  display: flex;
+  align-content: space-around;
+}
+
+
+#saved-stories {
+  margin-top: 25px;
+  flex-wrap: wrap;
+  flex: 1 0 80%;
+}
+#inspImgEl {
+  flex: 1 0 20%;
+}
+
+.left {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
