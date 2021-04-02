@@ -123,3 +123,58 @@ body {
       color: black
       align-content: space-around;
     }
+header {
+    background-color: #a9421d ;
+    color: white;
+    padding: 20px 35px;
+    background-position: 80%;
+  background-attachment:fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position:sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+
+
+
+#inspSect {
+  border: solid black 1px;
+  padding: 50px 0px;
+  margin-bottom: 100px;
+}
+
+#inspTitle {
+  padding-bottom: 45px;
+}
+
+#inspBtn {
+  margin: 45px 0px;
+}
+
+#inspImgs {
+  flex-wrap: wrap;
+  display: flex;
+  align-content: space-around;
+}
+
+
+#saved-stories {
+  margin-top: 25px;
+  flex-wrap: wrap;
+  flex: 1 0 80%;
+}
+#inspImgEl {
+  flex: 1 0 20%;
+}
+
+.left {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
