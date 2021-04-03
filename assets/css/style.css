@@ -2,6 +2,10 @@ body {
 text-align: center;
 }
 
+img, svg {
+  vertical-align: unset;
+}
+
 header {
     background-color: #a9421d ;
     color: white;
@@ -23,9 +27,12 @@ header {
 
 
 #inspSect {
-  border: solid black 1px;
+  border-top: solid black 1px;
   padding: 50px 0px;
-  margin-bottom: 100px;
+  margin: auto auto auto 100px;
+  justify-content: center;
+  width: 70%;
+
 }
 
 #inspTitle {
@@ -39,15 +46,17 @@ header {
 #inspImgs {
   flex-wrap: wrap;
   display: flex;
-  align-content: space-around;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
 }
-
 
 #saved-stories {
   margin-top: 25px;
   flex-wrap: wrap;
   flex: 1 0 80%;
 }
+
 #inspImgEl {
   flex: 1 0 20%;
 }
@@ -56,4 +65,7 @@ header {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+}
+.row {
+    --bs-gutter-x: 0rem;
 }
