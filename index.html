@@ -9,6 +9,13 @@
     <link rel="icon" type="image" href="./assets/images/quill-and-ink.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <style>
+        body {
+            background-image: url("assets/images/nicolas-cool-VRneKKKigMY.jpg");
+                background-repeat:no-repeat;
+               background-size:cover;
+        } 
+        </style>
 </head>
 
 
@@ -16,19 +23,41 @@
     <!-- start header here -->
     <header class="jumbotron">
         <h1 class="display-3">✎  Just Write</h1>
-        <p class="lead">A simple journaling app to get your creative juices flowing!
+        <p class="lead">Let your creativity run wild!
         </p>
+        <nav>
+            <!-- Unordered list element -->
+            <ul>
+              <!-- List item element-->
+              <li>
+                <!-- Anchor element -->
+                <a href="#StartWriting">Start Writing</a>
+              </li>
+              <li>
+                <a href="#inspSect">Inspiration Board</a>
+              </li>
+              <li>
+                <a href="#savedSect">Saved Stories</a>
+              </li>
+              <li>
+                <a href="#contact-us">Contact Us</a>
+              </li>
+            </ul>
+          </nav>
+
       </header>
 
+    <!-- end header here -->
+   
     <!-- start journal here -->
-    <div id="" class="">
-
+    <div id="StartWriting" class="container">
+        
         <!-- start prompter here -->
-        <div id="" class="">
-            <h4>Prompt?
-
-            </h4>
-            <button class="btn"><i class="fa fa-refresh"></i></button>
+        <div class="box">
+            <h5 id="prompt">
+                Five things that always get you into trouble.
+            </h5>
+            <button id="nextPrompt" class="btn"><i class="fa fa-refresh"></i></button>
         </div>
 
         <!-- start timer here -->
@@ -45,44 +74,45 @@
         </div>
 
     </div>
+    <!-- end journal here -->
 
     <!-- start inspiration section -->
     <div id="inspSect" class="">
-        <h2 id="inspTitle" class="">
-            Inspiration board
+        <h2 id="inspTitle" class="display-3 title">
+            Inspiration Board
         </h2>
         <div class="row justify-content-center">
-            <button id="inspBtn" class="d-flex justify-content-center btn btn-primary col-3">Search</button>
+            <button id="inspBtn" class="d-flex justify-content-center btn btn-primary col-3 display-3">Search</button>
         </div>
         <div id="inspImgs" class="">
-            <div id="inspImgEl" class="span2 offset1">
+            <div id="inspImgEl" class="span2 col-sm-6">
                 <img src="https://via.placeholder.com/150" alt="">
             </div>
-            <div id="inspImgEl" class="span2">
+            <div id="inspImgEl" class="span2 col-sm-6">
                 <img src="https://via.placeholder.com/150" alt="">
             </div>
-            <div id="inspImgEl" class="span2">
+            <div id="inspImgEl" class="span2 col-sm-6">
                 <img src="https://via.placeholder.com/150" alt="">
             </div>
-            <div id="inspImgEl" class="span2">
+            <div id="inspImgEl" class="span2 col-sm-6">
                 <img src="https://via.placeholder.com/150" alt="">
             </div>
-            <div id="inspImgEl" class="span2">
+            <div id="inspImgEl" class="span2 col-sm-6">
                 <img src="https://via.placeholder.com/150" alt="">
             </div>
-            <div id="inspImgEl" class="span2">
+            <div id="inspImgEl" class="span2 col-sm-6">
                 <img src="https://via.placeholder.com/150" alt="">
             </div>
-            <div id="inspImgEl" class="span2">
+            <div id="inspImgEl" class="span2 col-sm-6">
                 <img src="https://via.placeholder.com/150" alt="">
             </div>
-            <div id="inspImgEl" class="span2">
+            <div id="inspImgEl" class="span2 col-sm-6">
                 <img src="https://via.placeholder.com/150" alt="">
             </div>
-            <div id="inspImgEl" class="span2">
+            <div id="inspImgEl" class="span2 col-sm-6">
                 <img src="https://via.placeholder.com/150" alt="">
             </div>
-            <div id="inspImgEl" class="span2">
+            <div id="inspImgEl" class="span2 col-sm-6">
                 <img src="https://via.placeholder.com/150" alt="">
             </div>
         </div>
@@ -90,8 +120,9 @@
     <!-- end inspiration section -->
 
     <!-- start saved section  -->
+    <div id="savedSect" class="d-flex flex-wrap container">
     <div class="d-flex flex-wrap container">
-        <h2 class="justify-content-center container-fluid">
+        <h2 class="justify-content-center container-fluid display-3 title">
             Saved Entries
         </h2>
         <div id="saved-stories" class="card col">
@@ -126,4 +157,22 @@
 
     <script src="./assets/js/script.js"></script>
 </body>
+
+<br>
+
+<footer id="contact-us" class="container">
+    <div>
+        <h4>Contact Us</h4>
+        <p>You can reach out to us!<br>
+            Address: <br>
+            Facebook: <br>
+            Twitter: <br>
+            Instagram: <br><br>
+            Made with ♡
+        </p>
+
+    </div>
+
+</footer>
+
 </html>

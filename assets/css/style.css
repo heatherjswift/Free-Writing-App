@@ -1,71 +1,155 @@
 body {
-text-align: center;
-}
-
-img, svg {
-  vertical-align: unset;
-}
-
-header {
-    background-color: #a9421d ;
-    color: white;
-    padding: 20px 35px;
-    background-position: 80%;
-  background-attachment:fixed;
-  background-size: cover;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  position:sticky;
-  position: -webkit-sticky;
-  top: 0;
-  z-index: 9999;
-}
-
-
-
-
-#inspSect {
-  border-top: solid black 1px;
-  padding: 50px 0px;
-  margin: auto auto auto 100px;
-  justify-content: center;
-  width: 70%;
-
-}
-
-#inspTitle {
-  padding-bottom: 45px;
-}
-
-#inspBtn {
-  margin: 45px 0px;
-}
-
-#inspImgs {
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-}
-
-#saved-stories {
-  margin-top: 25px;
-  flex-wrap: wrap;
-  flex: 1 0 80%;
-}
-
-#inspImgEl {
-  flex: 1 0 20%;
-}
-
-.left {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-}
+    text-align: center;
+    }
 .row {
-    --bs-gutter-x: 0rem;
-}
+  --bs-gutter-x: unset;
+}   
+    header {
+      background-color: black;
+      color: white;
+      padding: 20px 35px;
+      background-position: 80%;
+      background-attachment:fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+      position: -webkit-sticky;
+      top: 0;
+      z-index: 9999;
+    }
+
+    header a {
+      text-decoration: none;
+      color: white;
+    }
+    
+    header nav {
+      float: right;
+      margin: 7px 0;
+      
+    }
+    
+    header nav ul li {
+      display: inline;
+    }
+    
+    header nav ul li a {
+      margin: 0 30px;
+      font-weight: lighter;
+      font-size: 22px;
+    }
+    
+    #StartWriting {
+      display:flex;
+      width: 800px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      padding: 35px 35px;
+      justify-content: center;
+      flex-direction: column;
+      border: 2px solid black;
+      background-color: #fed8b1;
+      color: black;
+      align-content: space-around;
+        
+    }
+      .hero-form {
+        display: flex;
+        align-self: center;
+        margin-bottom: 25px;
+        padding: 20px;
+        border: 2px solid black;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #f2a337;
+        color: black;
+        align-content: space-around;
+      }
+
+      textarea {
+        background-color: #f5f5f5;
+        border: 2px solid black;
+        width: 700px;
+        height: 275px;
+      }
+   
+    /* inspiration section start */
+    #inspSect {
+      margin: 15px auto auto auto;
+      background-color: black; 
+      padding-bottom: 35px;
+    }
+    
+    /* all section titles */
+    .title {
+      padding-top: 45px;
+      color: white;
+    }
+    
+    #inspBtn {
+      margin: 35px;
+      background-color: #f2a337;
+      border: none;
+    }
+    
+    img, svg {
+      vertical-align: unset;
+    }
+
+    #inspImgEl {
+      flex: 1 0 20%;
+      margin-bottom: 25px;
+    }
+
+    #inspImgs {
+      flex-wrap: wrap;
+      display: flex;
+      align-content: space-around;
+      padding: 30px;
+      margin: auto;
+      width: 80%;
+
+    }
+
+    /* inspiration section end */
+    /* saved section start */
+
+    #saved-stories {
+      margin-top: 25px;
+      flex-wrap: wrap;
+      flex: 1 0 80%;
+    }
+    
+    #savedSect {
+      width: 80%;
+      margin: auto;
+    }
+
+    #date {
+      background-color: #fed8b1;
+    }
+    
+    .left {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+#contact-us {
+      display: flex;
+      align-self: center;
+      justify-content: center;
+      background-color: #fed8b1;
+      width: 300px;
+      padding: 25px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      flex-direction: row;
+      border: 2px solid black;
+      color: black;
+      align-content: space-around;
+    }
