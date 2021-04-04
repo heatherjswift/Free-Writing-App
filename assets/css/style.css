@@ -87,6 +87,7 @@ body {
     .title {
       padding-top: 45px;
       color: white;
+      text-decoration: black;
     }
     
     #inspBtn {
