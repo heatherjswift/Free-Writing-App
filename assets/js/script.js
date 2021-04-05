@@ -1,3 +1,4 @@
+//get prompts
 var userPrompt = 0;
 var promptArray = [
     "A houseplant is dying. Tell it why it needs to live.",
@@ -19,17 +20,45 @@ var nextPromptBtn = function() {
     } 
 };
 
+//save prompts
 document.getElementById("savebutton").onclick = function () {saveText(), recallText()}
 
 var saveText = function() {
     textToSave = document.getElementById("textarea").value;
     localStorage.setItem("savedtext", textToSave);
-    console.log("hello")
 }
 
 var recallText = function () {
     document.getElementById('recalledtext').innerHTML =
     localStorage.getItem("savedtext");
+}
+
+
+//image api
+const auth = "563492ad6f917000010000010f961d1f70664d678d52b8dfdfbf0c08";
+const next = document.querySelector(".next");
+const input = document.querySelector('input')
+const searchbutton = document.querySelector('.searchbutton');
+
+let pagenr= 1;
+let search = false;
+let query="";
+
+input.addEventListener("input",(e)=> {
+    e.preventDefault();
+    query=e.target.value;
+});
+
+async function curatedPhotos(pagenr) {
+    const data= await fetch(`http://api.pexels.com/v1/curated?per_page=${pagenr}`, {
+        method:"GET", 
+        headers: {
+            Accept: "application/json",
+            Authorization: auth,
+        },
+    } );
+    const result = await data.json();
+    console.log(result);
 }
 
 // document.getElementById("recaller").onclick = function () {recallText()}
