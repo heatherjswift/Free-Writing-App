@@ -52,10 +52,14 @@ body {
       flex-direction: column;
       border: 2px solid black;
 <<<<<<< HEAD
+<<<<<<< HEAD
       background-color: #cb7119;
 =======
       background-color: #fed8b1;
 >>>>>>> 5783218af88fbc0ed1525319b1ca64021bf2db65
+=======
+      background-color: #fed8b1;
+>>>>>>> 832ef19a688bac3f8672afb65e2546ec6abd0856
       color: black;
       align-content: space-around;
         
@@ -91,6 +95,7 @@ body {
     .title {
       padding-top: 45px;
       color: white;
+      text-decoration: black;
     }
     
     #inspBtn {
@@ -106,17 +111,8 @@ body {
     #inspImgEl {
       flex: 1 0 20%;
       margin-bottom: 25px;
-    }
+    } 
 
-    #inspImgs {
-      flex-wrap: wrap;
-      display: flex;
-      align-content: space-around;
-      padding: 30px;
-      margin: auto;
-      width: 80%;
-
-    }
 
     /* inspiration section end */
     /* saved section start */
