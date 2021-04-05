@@ -105,14 +105,6 @@ body {
       margin-bottom: 25px;
     } 
 
-    #inspImgs {
-      flex-wrap: wrap;
-      display: flex;
-      align-content: space-around;
-      padding: 30px;
-      margin: auto;
-      width: 80%;
-    }
 
     /* inspiration section end */
     /* saved section start */
