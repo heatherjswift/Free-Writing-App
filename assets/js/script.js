@@ -60,7 +60,7 @@ async function curatedPhotos(pagenr) {
     const result = await data.json();
     result.photos.forEach(photo => {
         const pic = document.createElement("div");
-        pic.innerHTML = `<img src=${photo.src.medium}
+        pic.innerHTML = `<img src=${photo.src.medium}>
             <p>Photo : ${photo.photographer}</p>
             <a href=${photo.src.medium}>Download</a>        
             `;
@@ -68,6 +68,55 @@ async function curatedPhotos(pagenr) {
             
     });
 }
+
+async function searchPhotos(query, pagenr) {
+    const data= await fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=10&page=${pagenr}`, {
+        method:"GET", 
+        headers: {
+            Accept: "application/json",
+            Authorization: auth,
+        },
+    } );
+    const result = await data.json();
+    result.photos.forEach((photo) => {
+        const pic = document.createElement("div");
+        pic.innerHTML = `<img src=${photo.src.medium}>
+            <p>Photo : ${photo.photographer}</p>
+            <a href=${photo.src.medium}>Download</a>        
+            `;
+            document.querySelector(".gallery").appendChild(pic);
+            
+    });
+}
+
+searchbutton.addEventListener("click", () => {
+    if(input.value === "")return;
+    clear();
+    search = true;
+    searchPhotos(query, pagenr);
+    pagenr++;
+    console.log("hello")
+});
+
+function clear() {
+    input.value="";
+    document.querySelector(".gallery").innerHTML = "";
+    pagenr = 1;
+    console.log("hello 2")
+}
+
+next.addEventListener("click", () => {
+    if(!search)
+    {
+        pagenr++;
+        curatedPhotos(pagenr);
+    } else {
+        if (query.value === "") return;
+        pagenr++;
+        searchPhotos(query, pagenr);
+    }
+    console.log("hello 3")
+});
 
 curatedPhotos(pagenr);
 
