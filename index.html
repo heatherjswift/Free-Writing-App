@@ -37,7 +37,7 @@
                 <a href="#inspSect">Inspiration Board</a>
               </li>
               <li>
-                <a href="#savedSect">Saved Stories</a>
+                <a href="#savedEntries">Saved Stories</a>
               </li>
               <li>
                 <a href="#contact-us">Contact Us</a>
@@ -67,7 +67,7 @@
         </div>
 
         <!-- start textarea here -->
-        <div class="hero-form">
+        <div class="hero-form d-flex">
             <textarea id="textarea">
         
             </textarea>
@@ -82,68 +82,27 @@
         <h2 id="inspTitle" class="display-3 title">
             Inspiration Board
         </h2>
-
         <div class="row justify-content-center search">
             <input class="col-9 row" type="text" />
         <br/>
             <button id="inspBtn" class="d-flex justify-content-center btn btn-primary col-3 display-3 searchbutton row">Search</button>
         </div>
-
-        <!-- heather's api search temporary -->
-        <!-- <div class="search">
-            <input type="text" />
-            <div class="searchbutton">Search</div>
-        </div> -->
-        <!-- <div class="next">Next Page</div> -->
-
-
-
-        <div class="gallery">
-            <!-- <div id="inspImgEl" class="span2 col-sm-6">
-                 <div class="gallery"></div> -->
-            <!-- </div> -->
-            <!-- <div id="inspImgEl" class="span2 col-sm-6">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="span2 col-sm-6">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="span2 col-sm-6">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="span2 col-sm-6">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="span2 col-sm-6">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="span2 col-sm-6">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="span2 col-sm-6">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="span2 col-sm-6">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="span2 col-sm-6">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div> -->
-        </div>
+            <div class="gallery"></div>
     </div>
     <!-- end inspiration section -->
 
     <!-- start saved section  -->
-    <div id="savedSect" class="d-flex flex-wrap container">
-    <div class="d-flex flex-wrap container">
-        <h2 class="justify-content-center container-fluid display-3 title">
+    <div id="savedEntries" class="d-flex flex-wrap container">
+    <div class="d-flex flex-wrap row">
+        <h2 class="justify-content-center display-3 title">
             Saved Entries
         </h2>
         <div id="saved-stories" class="card col">
             <div id="date" type="date" class="card-header left">01/02/2021</div>
-            <div class="card-body left align-items-">
+            <div class="card-body left">
                 <h4 id="prompt-used" class="card-title left col-9">Latest Entry</h4>
-                <p id="recalledtext" class="card-text left">Your entry will be saved here!
+                <p id="recalledtext" class="card-text left col-12">
+                    Your entry will be saved here!
                 </p>
                 </body>
             </div>
@@ -152,7 +111,7 @@
             <div id="date" type="date" class="card-header left">01/02/2021</div>
             <div class="card-body left">
                 <h4 id="prompt-used" class="card-title left col-9">Elements</h4>
-                <p id="answer" class="card-text left">Long ago, the four nations lived together in harmony.
+                <p id="answer" class="card-text left col-12">Long ago, the four nations lived together in harmony.
                     Then, everything changed when the Fire Nation attacked.
                 </p>
             </div>
@@ -160,33 +119,37 @@
         <div id="saved-stories" class="card col">
             <div id="date" type="date" class="card-header left">01/02/2021</div>
             <div class="card-body left">
-                <h4 id="prompt-used" class="card-title left col">Elements</h4>
-                <p id="answer" class="card-text left">Long ago, the four nations lived together in harmony.
+                <h4 id="prompt-used" class="card-title left col-9">Elements</h4>
+                <p id="answer" class="card-text left col-12">Long ago, the four nations lived together in harmony.
                     Then, everything changed when the Fire Nation attacked.
                 </p>
             </div>
         </div>
     </div>
+
+    <footer id="contact-us" class="container">
+       
+        <div>
+            <h2>Contact Us!</h2>
+            <h3>Just Write</h3>
+
+            <p>Any Concerns? <br>
+               Reach out to our Corporate Team.<br><br>
+              290 Bremner Blvd, <br />
+              Toronto, ON <br />
+              M5V 3L9<br />
+              P: 647 111 1111<br />
+              E: <a href="mailto:info@justwrite.ca">info@justwrite.ca</a>
+            </p>
+
+        </div>
+    </footer>
+
+
     <!-- end saved section -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
-
-<br>
-
-<footer id="contact-us" class="container">
-    <div>
-        <h4>Contact Us</h4>
-        <p>You can reach out to us!<br>
-            Address: <br>
-            Facebook: <br>
-            Twitter: <br>
-            Instagram: <br><br>
-            Made with ♡
-        </p>
-
-    </div>
-
-</footer>
 
 </html>
