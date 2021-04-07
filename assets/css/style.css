@@ -133,8 +133,9 @@ body {
 #contact-us h3 {
   justify-content: center;
 }
+
 #contact-us {
-      width: 100%;
+      margin bottom: 40px;
       display: flex;
       align-self: center;
       justify-content: center;
