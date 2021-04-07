@@ -63,7 +63,7 @@ async function curatedPhotos(pagenr) {
             <p>Photo by: ${photo.photographer}</p>
             <a href=${photo.src.medium}>Download</a>        
             `;
-            document.querySelector(".gallery").appendChild(pic);
+            document.querySelector("#inspImgs").appendChild(pic);
             
     });
 }
@@ -83,7 +83,7 @@ async function searchPhotos(query, pagenr) {
             <p>Photo : ${photo.photographer}</p>
             <a href=${photo.src.medium}>Download</a>        
             `;
-            document.querySelector(".gallery").appendChild(pic);
+            document.querySelector("#inspImgs").appendChild(pic);
             
     });
 }
