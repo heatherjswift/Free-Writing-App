@@ -105,3 +105,44 @@ function clear() {
 }
 
 curatedPhotos(pagenr);
+
+
+// next.addEventListener("click", () => {	
+//     if(!search)	
+//     {	
+//         pagenr++;	
+//         curatedPhotos(pagenr);	
+//     } else {	
+//         if (query.value === "") return;	
+//         pagenr++;	
+//         searchPhotos(query, pagenr);	
+//     }	
+//     console.log("hello 3")	
+// });	
+// document.getElementById("recaller").onclick = function () {recallText()}	
+// var saveBtnEl = document.querySelector("#saveBtn");	
+// var savedEntriesEl = document.querySelector("#savedEntries");	
+// // var dateEl = document.querySelector("#date");	
+// // var today = new(Date);	
+// // var dateVar = today.toString();	
+// // var saveEntry = function() {	
+// //   localStorage.setItem(dateVar, JSON.stringify(userEntry));	
+// // };	
+// var createEntry = function(entryDiv, entryHead, entryP) {	
+//   // get the user entry and make it into string object	
+//   var userEntry = document.getElementById("userEntry").value.toString();	
+//   // create div element in the saved entries section 	
+//   var entryDiv = $("<div>").addClass("card col");	
+//   savedEntriesEl.append(entryDiv);	
+//   var entryHead = $("<h4>").addClass("card-title left col-9");	
+//   var entryP = $("<p>").addClass("card-text left").text(userEntry);	
+//   entryDiv.append(entryHead, entryP);	
+//   console.log(entryHead);	
+//   console.log(entryP);	
+//   console.log(entryDiv);	
+  // saveEntry();	
+//};	
+// saveBtnEl.addEventListener("click", createEntry);	
+// var saveButtonHandler = function() {	
+//   // get the user entry and make it into string object	
+//   var userEntry = document.getElementById("userEntry").value.toString();	
