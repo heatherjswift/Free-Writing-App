@@ -37,7 +37,7 @@
                 <a href="#inspSect">Inspiration Board</a>
               </li>
               <li>
-                <a href="#savedSect">Saved Stories</a>
+                <a href="#savedEntries">Saved Stories</a>
               </li>
               <li>
                 <a href="#contact-us">Contact Us</a>
@@ -82,41 +82,12 @@
         <h2 id="inspTitle" class="display-3 title">
             Inspiration Board
         </h2>
-        <div class="row justify-content-center">
-            <button id="inspBtn" class="d-flex justify-content-center btn btn-primary col-lg-3 display-3">Search</button>
+        <div class="row justify-content-center search">
+            <input class="col-9 row" type="text" />
+        <br/>
+            <button id="inspBtn" class="d-flex justify-content-center btn btn-primary col-3 display-3 searchbutton row">Search</button>
         </div>
-        <div id="inspImgs" class="row container-fluid">
-            <div id="inspImgEl" class="col-xs-6">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="col-xs-6">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="col">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="col">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="col">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="col">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="col">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="col">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="col">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>
-            <div id="inspImgEl" class="col">
-                <img src="https://via.placeholder.com/150" alt="">
-            </div>  
-        </div>
+            <div id="inspImgs" class="gallery"></div>
     </div>
     <!-- end inspiration section -->
 
@@ -155,29 +126,30 @@
             </div>
         </div>
     </div>
+
+    <footer id="contact-us" class="container">
+       
+        <div>
+            <h2>Contact Us!</h2>
+            <h3>Just Write</h3>
+
+            <p>Any Concerns? <br>
+               Reach out to our Corporate Team.<br><br>
+              290 Bremner Blvd, <br />
+              Toronto, ON <br />
+              M5V 3L9<br />
+              P: 647 111 1111<br />
+              E: <a href="mailto:info@justwrite.ca">info@justwrite.ca</a>
+            </p>
+
+        </div>
+    </footer>
+
+
     <!-- end saved section -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
-
-<br>
-
-<div class="container">
-    <h4 class="display-3 title">Contact Us!</h4>
-<footer id="contact-us" class="container">
-    <div>
-        <p>You can reach out to us!<br>
-            Address: <br>
-            Facebook: <br>
-            Twitter: <br>
-            Instagram: <br><br>
-            Made with ♡
-        </p>
-
-    </div>
-
-    </footer>
-</div>
 
 </html>
