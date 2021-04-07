@@ -130,12 +130,15 @@ body {
       flex-wrap: wrap;
     }
 
+#contact-us h2 {
+  font-size: 50px;
+  color:#f2a337;
+}
 #contact-us {
       display: flex;
       align-self: center;
       justify-content: center;
       background-color: #fed8b1;
-      width: 300px;
       padding: 25px;
       flex-wrap: wrap;
       margin-top: 20px;
