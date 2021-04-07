@@ -106,6 +106,34 @@ body {
     } 
 
 
+    .gallery {
+      width: 90%;
+      margin: 12vh 50%;
+      transform: translateX(-50%);
+      display: grid;
+      grid-template-columns: repeat(5, 200px);
+      row-gap: 10px;
+      column-gap: 10px;
+      justify-content: center;
+    }
+
+    .gallery div {
+      position: relative;
+    }
+
+    .gallery img {
+      margin-left: 5px;
+      height: 300px;
+      width: 200px;
+      object-fit: cover;
+      object-position: center;
+      cursor: pointer;
+    }
+
+    .gallery p {
+      color: white;
+    }
+
     /* inspiration section end */
     /* saved section start */
 
@@ -134,6 +162,7 @@ body {
   font-size: 50px;
   color:#f2a337;
 }
+
 #contact-us {
       display: flex;
       align-self: center;
@@ -148,3 +177,6 @@ body {
       color: black;
       align-content: space-around;
     }
+
+
+    
