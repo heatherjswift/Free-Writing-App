@@ -105,4 +105,3 @@ function clear() {
 }
 
 curatedPhotos(pagenr);
-
