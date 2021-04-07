@@ -38,17 +38,17 @@ body {
     
   header nav ul li {
     display: inline;
-    }
+  }
 
   .topnav {
-    background-color:#f2a337;
+    background-color: black;
     overflow: hidden;
     }
 
   .topnav a {
     float:left;
     display: block;
-    color:black;
+    color:white;
     text-align: center;
     padding: 10px 14px;
     text-decoration:none;
@@ -57,7 +57,7 @@ body {
     }
 
   .topnav a:hover {
-    background-color: #ddd;
+    background-color: #f2a337;
     color: black;
   }
     
@@ -97,7 +97,7 @@ body {
       }
 
    
-    
+     
    
     /* inspiration section start */
     #inspSect {
