@@ -130,20 +130,17 @@ body {
       flex-wrap: wrap;
     }
 
-#contact-us h2 {
-  font-size: 50px;
-  color:#f2a337;
+#contact-us h3 {
+  justify-content: center;
 }
 #contact-us {
+      width: 100%;
       display: flex;
       align-self: center;
       justify-content: center;
       background-color: #fed8b1;
       padding: 25px;
       flex-wrap: wrap;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      flex-direction: row;
       border: 2px solid black;
       color: black;
       align-content: space-around;
