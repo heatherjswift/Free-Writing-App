@@ -19,7 +19,7 @@
         input:focus, textarea:focus, select:focus{
         outline: none;
          }
-        </style>
+    </style>
 </head>
 
 
@@ -32,7 +32,7 @@
             <h1 class="display-3">Just Write</h1>
         </div>
 
-        <p class="lead">Let your creativity run wild!</p>
+        <p id="lead">Let your creativity run wild!</p>
 
         <nav class="topnav" id="myTopnav">
             <!-- Unordered list element -->
@@ -64,11 +64,12 @@
         
         <!-- start prompter here -->
         <div class="box">
-            <h5 id="prompt">
-                
+            <h5 id="prompt">    
             </h5>
-            <button id="nextPrompt" class="btn"><i class="fa fa-refresh"></i></button>
+            <button id="nextPrompt" class="btn"><span class="front"><i class="fa fa-refresh"></i></span></button>
         </div>
+
+        <br>
 
         <!-- start timer here -->
         <div>
@@ -77,8 +78,8 @@
 
         <!-- start textarea here -->
         <div class="hero-form d-flex">
-            <textarea id="textarea" placeholder="Start writing here..."></textarea>
-            <button id="savebutton" class="btn"><i class="fa fa-save"></i></button>
+            <textarea spellcheck="true"id="textarea" placeholder="Start writing here..."></textarea>
+            <button id="savebutton" class="btn"><span class="front"><i class="fa fa-save"></i></span></button>
         </div>
 
     </div>
@@ -90,9 +91,9 @@
             Inspiration Board
         </h2>
         <div class="row justify-content-center search">
-            <input class="col-9 row" type="text" placeholder="Get Your Inspo Here"/>
+            <input class="col-4 row" type="text" placeholder="Get Your Inspo Here"/>
         <br/>
-            <button id="inspBtn" class="d-flex justify-content-center btn btn-primary col-md-3 col-12 display-3 searchbutton row">Search</button>
+            <button id="inspBtn" class="d-flex justify-content-center btn btn-primary col-md-3 col-12 display-3 searchbutton row"><span class="front">Search</span></button>
         </div>
             <div id="inspImgs" class="gallery"></div>
     </div>
