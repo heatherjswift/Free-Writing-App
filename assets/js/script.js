@@ -21,50 +21,46 @@ var nextPromptBtn = function() {
     } 
 };
 
-//save prompts in localstorage with date
-// document.getElementById("savebutton").onclick = function () {saveText(), recallText()}
+var entries = [];
 
-// var saveText = function() {
-//     textToSave = document.getElementById("textarea").value;
-//     localStorage.setItem(date, textToSave);
-// }
+document.getElementById("savebutton").onclick = function() {saveEntry(), recallEntry()};
 
-// var recallText = function () {
-//     document.getElementById('recalledtext').innerHTML =
-//     localStorage.getItem(date);
-//     document.getElementById('date').innerHTML = localStorage.getItem(keyName);
-// }
-
-document.getElementById("savebutton").onclick = function() {createEntry(), saveEntry(), recallEntry()};
-var createEntry = function(entryDate, entryText, entryPrompt) {
-    
-};
-
-var recallEntry = function(entry) {
-    // entry = JSON.parse(localStorage.getItem(entryKey));
-
-    //if nothing in localstorage
-    if (!entryKey) {
-        entryInfo = {
-            date: [],
-            entryText: [],
-            entryPrompt: [],
-        };
-    }
-};
-
+//save entry into localstorage
 var saveEntry = function() {
-    //date in localstorage
+    //moment js to determine current date and time
     var date = moment().format("MMMM Do YYYY, h:mm a");
-    entryKey = date + " Entry";
-    //entry Value in localstorage
+    //setting the entries date, text value and prompt used
+    entryDate = date;
     entryText = document.getElementById("textarea").value.trim();
     entryPrompt = document.getElementById("prompt").innerHTML.trim();
-    console.log(entryPrompt);
-    var entryInfo = {date, entryText, entryPrompt};
 
-    localStorage.setItem(entryKey, JSON.stringify(entryInfo));
+    //saving to localstorage as a nested array
+    entryInfo = {date: entryDate, text: entryText, prompt: entryPrompt};
+    entries.push(entryInfo);
+    localStorage.setItem("entries", JSON.stringify(entries));
+
+    //recalling the entry onto the screen
+    document.getElementById("recalledtext").innerHTML = entryText;
+    var dateEl = document.getElementById("date");
+    var dateNode = document.createTextNode(date);
+    dateEl.appendChild(dateNode);
+    document.getElementById("prompt-used").innerHTML = entryPrompt;
 };
+
+//display saved entry
+// var recallEntry = function() {
+//     var entries = JSON.parse(localStorage.getItem("entries"));
+//     console.log(entries);
+
+//     //if nothing in localstorage
+//     if (!entryKey) {
+//         entryInfo = {
+//             date: [],
+//             text: [],
+//             prompt: [],
+//         };
+//     }
+// };
 
 //image api
 const auth = "563492ad6f917000010000010f961d1f70664d678d52b8dfdfbf0c08";
