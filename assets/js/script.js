@@ -1,6 +1,7 @@
 //get prompts
 var userPrompt = 0;
 var promptArray = [
+    "Five things that always get you into trouble.",
     "A houseplant is dying. Tell it why it needs to live.",
     "Write a social media status update for New Years 50 years from now.",
     "You're an astronaut. Describe your perfect day.",
@@ -8,31 +9,62 @@ var promptArray = [
     "You're a fortune teller. Tell your favorite protagonist or villian their future."
 ];
 
+document.getElementById('prompt').innerHTML = promptArray[userPrompt];
 document.getElementById("nextPrompt").onclick = function () {nextPromptBtn()}
 
 var nextPromptBtn = function() {
+    userPrompt++;
     document.getElementById('prompt').innerHTML = promptArray[userPrompt];
     
-    //document.getElementById.InnerConnect = promptArray[userPrompt].prompt;
-    userPrompt++
     if (userPrompt === 5) {
-      userPrompt=0;
+      userPrompt=-1;
     } 
 };
 
-//save prompts
-document.getElementById("savebutton").onclick = function () {saveText(), recallText()}
+//save prompts in localstorage with date
+// document.getElementById("savebutton").onclick = function () {saveText(), recallText()}
 
-var saveText = function() {
-    textToSave = document.getElementById("textarea").value;
-    localStorage.setItem("savedtext", textToSave);
-}
+// var saveText = function() {
+//     textToSave = document.getElementById("textarea").value;
+//     localStorage.setItem(date, textToSave);
+// }
 
-var recallText = function () {
-    document.getElementById('recalledtext').innerHTML =
-    localStorage.getItem("savedtext");
-}
+// var recallText = function () {
+//     document.getElementById('recalledtext').innerHTML =
+//     localStorage.getItem(date);
+//     document.getElementById('date').innerHTML = localStorage.getItem(keyName);
+// }
 
+document.getElementById("savebutton").onclick = function() {createEntry(), saveEntry(), recallEntry()};
+var createEntry = function(entryDate, entryText, entryPrompt) {
+    
+};
+
+var recallEntry = function(entry) {
+    // entry = JSON.parse(localStorage.getItem(entryKey));
+
+    //if nothing in localstorage
+    if (!entryKey) {
+        entryInfo = {
+            date: [],
+            entryText: [],
+            entryPrompt: [],
+        };
+    }
+};
+
+var saveEntry = function() {
+    //date in localstorage
+    var date = moment().format("MMMM Do YYYY, h:mm a");
+    entryKey = date + " Entry";
+    //entry Value in localstorage
+    entryText = document.getElementById("textarea").value.trim();
+    entryPrompt = document.getElementById("prompt").innerHTML.trim();
+    console.log(entryPrompt);
+    var entryInfo = {date, entryText, entryPrompt};
+
+    localStorage.setItem(entryKey, JSON.stringify(entryInfo));
+};
 
 //image api
 const auth = "563492ad6f917000010000010f961d1f70664d678d52b8dfdfbf0c08";
@@ -105,44 +137,3 @@ function clear() {
 }
 
 curatedPhotos(pagenr);
-
-
-// next.addEventListener("click", () => {	
-//     if(!search)	
-//     {	
-//         pagenr++;	
-//         curatedPhotos(pagenr);	
-//     } else {	
-//         if (query.value === "") return;	
-//         pagenr++;	
-//         searchPhotos(query, pagenr);	
-//     }	
-//     console.log("hello 3")	
-// });	
-// document.getElementById("recaller").onclick = function () {recallText()}	
-// var saveBtnEl = document.querySelector("#saveBtn");	
-// var savedEntriesEl = document.querySelector("#savedEntries");	
-// // var dateEl = document.querySelector("#date");	
-// // var today = new(Date);	
-// // var dateVar = today.toString();	
-// // var saveEntry = function() {	
-// //   localStorage.setItem(dateVar, JSON.stringify(userEntry));	
-// // };	
-// var createEntry = function(entryDiv, entryHead, entryP) {	
-//   // get the user entry and make it into string object	
-//   var userEntry = document.getElementById("userEntry").value.toString();	
-//   // create div element in the saved entries section 	
-//   var entryDiv = $("<div>").addClass("card col");	
-//   savedEntriesEl.append(entryDiv);	
-//   var entryHead = $("<h4>").addClass("card-title left col-9");	
-//   var entryP = $("<p>").addClass("card-text left").text(userEntry);	
-//   entryDiv.append(entryHead, entryP);	
-//   console.log(entryHead);	
-//   console.log(entryP);	
-//   console.log(entryDiv);	
-  // saveEntry();	
-//};	
-// saveBtnEl.addEventListener("click", createEntry);	
-// var saveButtonHandler = function() {	
-//   // get the user entry and make it into string object	
-//   var userEntry = document.getElementById("userEntry").value.toString();	

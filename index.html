@@ -65,7 +65,7 @@
         <!-- start prompter here -->
         <div class="box">
             <h5 id="prompt">
-                Five things that always get you into trouble.
+                
             </h5>
             <button id="nextPrompt" class="btn"><i class="fa fa-refresh"></i></button>
         </div>
@@ -77,9 +77,7 @@
 
         <!-- start textarea here -->
         <div class="hero-form d-flex">
-            <textarea id="textarea">
-        
-            </textarea>
+            <textarea id="textarea" placeholder="Start writing here..."></textarea>
             <button id="savebutton" class="btn"><i class="fa fa-save"></i></button>
         </div>
 
@@ -92,7 +90,7 @@
             Inspiration Board
         </h2>
         <div class="row justify-content-center search">
-            <input class="col-9 row" type="text" />
+            <input class="col-9 row" type="text" placeholder="Get Your Inspo Here"/>
         <br/>
             <button id="inspBtn" class="d-flex justify-content-center btn btn-primary col-md-3 col-12 display-3 searchbutton row">Search</button>
         </div>
@@ -107,7 +105,7 @@
             Saved Stories
         </h2>
         <div id="saved-stories" class="card col">
-            <div id="date" type="date" class="card-header left">01/02/2021</div>
+            <div id="date" type="date" class="card-header left"></div>
             <div class="card-body left">
                 <h4 id="prompt-used" class="card-title left col-9">Prompt</h4>
                 <p id="recalledtext" class="card-text left col-12">
@@ -164,7 +162,7 @@
 
 
     <!-- end saved section -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
