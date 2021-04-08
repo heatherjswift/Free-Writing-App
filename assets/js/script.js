@@ -91,9 +91,8 @@ async function curatedPhotos(pagenr) {
     const result = await data.json();
     result.photos.forEach(photo => {
         const pic = document.createElement("div");
-        pic.innerHTML = `<img src=${photo.src.medium}>
-            <p>Photo by: ${photo.photographer}</p>
-            <a href=${photo.src.medium}>Download</a>        
+        pic.innerHTML = `<a href=${photo.src.medium}><img src=${photo.src.medium}></a>
+            <p>Photo by: ${photo.photographer}</p>       
             `;
             document.querySelector("#inspImgs").appendChild(pic);
             
@@ -111,9 +110,8 @@ async function searchPhotos(query, pagenr) {
     const result = await data.json();
     result.photos.forEach((photo) => {
         const pic = document.createElement("div");
-        pic.innerHTML = `<img src=${photo.src.medium}>
-            <p>Photo : ${photo.photographer}</p>
-            <a href=${photo.src.medium}>Download</a>        
+        pic.innerHTML = `<a href=${photo.src.medium}><img src=${photo.src.medium}></a>
+            <p>Photo by: ${photo.photographer}</p>      
             `;
             document.querySelector("#inspImgs").appendChild(pic);
             
