@@ -37,6 +37,7 @@ var saveEntry = function() {
     entryInfo = {date: entryDate, text: entryText, prompt: entryPrompt};
     entries.push(entryInfo);
     localStorage.setItem("entries", JSON.stringify(entries));
+    recallEntry();
 };
 
 // display saved entries
@@ -99,7 +100,6 @@ var createEntry = function() {
 document.getElementById("savebutton").onclick = function() {
     saveEntry();
 };
-recallEntry();
 
 //image api
 const auth = "563492ad6f917000010000010f961d1f70664d678d52b8dfdfbf0c08";
