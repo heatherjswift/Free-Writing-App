@@ -4,6 +4,9 @@ body {
 .row {
 --bs-gutter-x: unset;
 }
+.hide {
+  display: none;
+}
   
 header {
   background-color: black;
