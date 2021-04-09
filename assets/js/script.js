@@ -120,14 +120,39 @@ searchbutton.addEventListener("click", () => {
     search = true;
     searchPhotos(query, pagenr);
     pagenr++;
-    console.log("hello")
 });
 
 function clear() {
     input.value="";
     document.querySelector(".gallery").innerHTML = "";
     pagenr = 1;
-    console.log("hello 2")
 }
 
 curatedPhotos(pagenr);
+
+//timer(s)
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+function startTimer() {
+    var fiveMinute = 60 * 5,
+    display = document.querySelector('#time');
+    startTimer(fiveMinute, display);
+}
+
+
