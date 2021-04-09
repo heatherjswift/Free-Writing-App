@@ -22,8 +22,7 @@ var nextPromptBtn = function() {
 };
 
 var entries = [];
-
-document.getElementById("savebutton").onclick = function() {saveEntry(), recallEntry()};
+var savedEntriesWrapperEl = document.getElementById("#savedEntriesWrapper");
 
 //save entry into localstorage
 var saveEntry = function() {
@@ -47,20 +46,58 @@ var saveEntry = function() {
     document.getElementById("prompt-used").innerHTML = entryPrompt;
 };
 
-//display saved entry
-// var recallEntry = function() {
-//     var entries = JSON.parse(localStorage.getItem("entries"));
-//     console.log(entries);
+// display saved entry
+var recallEntry = function() {
+    var entries = JSON.parse(localStorage.getItem("entries"));
 
-//     //if nothing in localstorage
-//     if (!entryKey) {
-//         entryInfo = {
-//             date: [],
-//             text: [],
-//             prompt: [],
-//         };
-//     }
-// };
+    //if nothing in localstorage
+    if (!entries) {
+        entryInfo = {
+            date: [],
+            text: [],
+            prompt: [],
+        };
+    }
+};
+
+var createEntry = function() {
+    console.log(savedEntriesWrapperEl);
+
+    var dateEl = document.createElement("div");
+    $(dateEl)
+        .addClass("card-header-left")
+        .attr("id", "date")
+        .attr("type", "date")
+        .html("This is a date");
+    console.log(dateEl);
+    var entryTextWrapEl = document.createElement("div");
+    $(entryTextWrapEl).addClass("card-body left");
+
+    var promptEl = document.createElement("h4");
+    $(promptEl)
+        .addClass("card-title left col-9")
+        .attr("id", "prompt-used")
+        .html("This is a prompt");    
+
+    var entryTextEl = document.createElement("p");
+    $(entryTextEl)
+        .addClass("card-text left col-12")
+        .attr("id", "recalledtext")
+        .html("This is an entry");
+
+    entryTextWrapEl.append(promptEl, entryTextEl);
+        
+    var entryCardEl = document.createElement("div");
+    console.log(entryCardEl);    
+    $(entryCardEl)
+        .addClass("card col")
+        .attr("id", "saved-stories");
+
+    entryCardEl.append(dateEl, entryTextWrapEl);
+    savedEntriesWrapperEl.append(entryCardEl);
+}
+
+document.getElementById("savebutton").onclick = function() {saveEntry(), recallEntry(), createEntry()};
 
 //image api
 const auth = "563492ad6f917000010000010f961d1f70664d678d52b8dfdfbf0c08";
