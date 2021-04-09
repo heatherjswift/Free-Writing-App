@@ -26,7 +26,6 @@ var savedEntriesWrapperEl = document.querySelector("#savedEntriesWrapper");
 
 //save entry into localstorage
 var saveEntry = function() {
-    createEntry();
     //moment js to determine current date and time
     var date = moment().format("MMMM Do YYYY, h:mm a");
     //setting the entries date, text value and prompt used
@@ -38,19 +37,12 @@ var saveEntry = function() {
     entryInfo = {date: entryDate, text: entryText, prompt: entryPrompt};
     entries.push(entryInfo);
     localStorage.setItem("entries", JSON.stringify(entries));
-
-    //recalling the entry onto the screen
-    document.getElementById("recalledtext").innerHTML = entryText;
-    var dateEl = document.getElementById("date");
-    var dateNode = document.createTextNode(date);
-    dateEl.appendChild(dateNode);
-    document.getElementById("prompt-used").innerHTML = entryPrompt;
 };
 
-// display saved entry
+// display saved entries
 var recallEntry = function() {
     var entries = JSON.parse(localStorage.getItem("entries"));
-
+    console.log(entries);
     //if nothing in localstorage
     if (!entries) {
         entryInfo = {
@@ -59,47 +51,55 @@ var recallEntry = function() {
             prompt: [],
         };
     }
+    console.log(entries);
+    for (var i = 0; i < entries.length; i++) {
+        createEntry(entries[i]);
+        document.getElementById("recalledtext").innerHTML = entries[i].text;
+        var dateEl = document.getElementById("date");
+        var dateNode = document.createTextNode(entries[i].date);
+        dateEl.appendChild(dateNode);
+        document.getElementById("prompt-used").innerHTML = entries[i].prompt;
+    }
 };
 
-var createEntry = function() {
-    console.log(savedEntriesWrapperEl);
-
-    var dateEl = document.createElement("div");
-    $(dateEl)
-        .addClass("card-header left")
-        .attr("id", "date")
-        .attr("type", "date")
-        .html("This is a date");
-    console.log(dateEl);
-
-    var entryTextWrapEl = document.createElement("div");
-    $(entryTextWrapEl).addClass("card-body left");
-
-    var promptEl = document.createElement("h4");
-    $(promptEl)
-        .addClass("card-title left col-9")
-        .attr("id", "prompt-used")
-        .html("This is a prompt");    
-
-    var entryTextEl = document.createElement("p");
-    $(entryTextEl)
-        .addClass("card-text left col-12")
-        .attr("id", "recalledtext")
-        .html("This is an entry");
-
-    entryTextWrapEl.append(promptEl, entryTextEl);
-        
+var createEntry = function() {   
+    // creating entry card container div element
     var entryCardEl = document.createElement("div");
     console.log(entryCardEl);    
     $(entryCardEl)
         .addClass("card col")
         .attr("id", "saved-stories");
-
+    savedEntriesWrapperEl.append(entryCardEl);    
+    
+    // creating date and another nester container element
+    var dateEl = document.createElement("div");
+    $(dateEl)
+        .addClass("card-header left")
+        .attr("id", "date")
+        .attr("type", "date")
+  
+    var entryTextWrapEl = document.createElement("div");
+    $(entryTextWrapEl).addClass("card-body left");
     entryCardEl.append(dateEl, entryTextWrapEl);
-    savedEntriesWrapperEl.append(entryCardEl);
+
+    // creating heading and text entry elements
+    var promptEl = document.createElement("h4");
+    $(promptEl)
+        .addClass("card-title left col-9")
+        .attr("id", "prompt-used")
+ 
+    var entryTextEl = document.createElement("p");
+    $(entryTextEl)
+        .addClass("card-text left col-12")
+        .attr("id", "recalledtext")
+
+    entryTextWrapEl.append(promptEl, entryTextEl);
 }
 
-document.getElementById("savebutton").onclick = function() {saveEntry(), recallEntry()};
+document.getElementById("savebutton").onclick = function() {
+    saveEntry();
+};
+recallEntry();
 
 //image api
 const auth = "563492ad6f917000010000010f961d1f70664d678d52b8dfdfbf0c08";
