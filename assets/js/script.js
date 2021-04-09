@@ -22,10 +22,11 @@ var nextPromptBtn = function() {
 };
 
 var entries = [];
-var savedEntriesWrapperEl = document.getElementById("#savedEntriesWrapper");
+var savedEntriesWrapperEl = document.querySelector("#savedEntriesWrapper");
 
 //save entry into localstorage
 var saveEntry = function() {
+    createEntry();
     //moment js to determine current date and time
     var date = moment().format("MMMM Do YYYY, h:mm a");
     //setting the entries date, text value and prompt used
@@ -65,11 +66,12 @@ var createEntry = function() {
 
     var dateEl = document.createElement("div");
     $(dateEl)
-        .addClass("card-header-left")
+        .addClass("card-header left")
         .attr("id", "date")
         .attr("type", "date")
         .html("This is a date");
     console.log(dateEl);
+
     var entryTextWrapEl = document.createElement("div");
     $(entryTextWrapEl).addClass("card-body left");
 
@@ -97,7 +99,7 @@ var createEntry = function() {
     savedEntriesWrapperEl.append(entryCardEl);
 }
 
-document.getElementById("savebutton").onclick = function() {saveEntry(), recallEntry(), createEntry()};
+document.getElementById("savebutton").onclick = function() {saveEntry(), recallEntry()};
 
 //image api
 const auth = "563492ad6f917000010000010f961d1f70664d678d52b8dfdfbf0c08";
