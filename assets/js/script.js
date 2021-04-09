@@ -136,6 +136,7 @@ function startTimer() {
     var fiveMinute = 60 * 5,
     display = document.querySelector('#time');
     beginTime(fiveMinute, display);
+    startFiveBtn.classList.add('hide')
 }
 
 function beginTime(duration, display) {
