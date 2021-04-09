@@ -150,12 +150,10 @@ function beginTime(duration, display) {
         display.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
-            timer = duration;
+            timer = 0;
         }
     }, 1000);
 }
-const startButton = document.getElementById('5-min-btn')
+var startFiveBtn = document.getElementById('5-min-btn');
 
-
-
-startButton.addEventListener('click', startTimer)
+startFiveBtn.addEventListener('click', startTimer);
