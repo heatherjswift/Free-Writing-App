@@ -19,7 +19,7 @@
         input:focus, textarea:focus, select:focus{
         outline: none;
          }
-        </style>
+    </style>
 </head>
 
 
@@ -32,7 +32,7 @@
             <h1 class="display-3">Just Write</h1>
         </div>
 
-        <p class="lead">Let your creativity run wild!</p>
+        <p id="lead">Let your creativity run wild!</p>
 
         <nav class="topnav" id="myTopnav">
             <!-- Unordered list element -->
@@ -59,16 +59,17 @@
     <!-- end header here -->
 
    
-    <!-- start journal here -->
+    <!-- start Prompt & Textarea here -->
     <div id="StartWriting" class="container">
         
         <!-- start prompter here -->
         <div class="box">
-            <h5 id="prompt">
-                
+            <h5 id="prompt">    
             </h5>
-            <button id="nextPrompt" class="btn"><i class="fa fa-refresh"></i></button>
+            <button id="nextPrompt" class="btn"><span class="front"><i class="fa fa-refresh"></i></span></button>
         </div>
+
+        <br>
 
         <!-- start timer here -->
         <div>
@@ -77,8 +78,8 @@
 
         <!-- start textarea here -->
         <div class="hero-form d-flex">
-            <textarea id="textarea" placeholder="Start writing here..."></textarea>
-            <button id="savebutton" class="btn"><i class="fa fa-save"></i></button>
+            <textarea spellcheck="true"id="textarea" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Start writing here..."></textarea>
+            <button id="savebutton" class="btn"><span class="front"><i class="fa fa-save"></i></span></button>
         </div>
 
     </div>
@@ -89,10 +90,11 @@
         <h2 id="inspTitle" class="display-3 title">
             Inspiration Board
         </h2>
+        <br>
         <div class="row justify-content-center search">
-            <input class="col-9 row" type="text" placeholder="Get Your Inspo Here"/>
+            <input id="search-text" class="col-5 row" type="text" placeholder="&nbsp;&nbsp;Get Your Inspo Here"/>
         <br/>
-            <button id="inspBtn" class="d-flex justify-content-center btn btn-primary col-md-3 col-12 display-3 searchbutton row">Search</button>
+            <button id="inspBtn" class="d-flex justify-content-center btn btn-primary col-md-3 col-9 searchbutton row"><span class="front">Search</span></button>
         </div>
             <div id="inspImgs" class="gallery"></div>
     </div>
@@ -129,21 +131,16 @@
 
         <h2 class="display-3 title">Contact Us!</h2>
        
-        <footer id="contact-us" class="col-10 container">
+        <footer id="contact-us" class="col-6 container">
             <div class="footer">
-             <p>Any Concerns? <br>
-               Reach out to our Corporate Team.<br><br>
-               <u>Just Write Headquarters:</u><br>
+             <p>Any Concerns? <br> Reach out to us!<br><br>
+               <u>Just Write:</u><br>
                290 Bremner Blvd, <br>
                Toronto, ON <br>
                M5V 3L9<br>
                P: 647 111 1111<br>
                E: <a href="mailto:info@justwrite.ca">info@justwrite.ca</a>
              </p>
-            </div>
-
-            <div class="maps">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2690639742036!2d-79.3892454847662!3d43.64257006113663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d68bf33a9b%3A0x15edd8c4de1c7581!2sCN%20Tower!5e0!3m2!1sen!2sca!4v1617767967387!5m2!1sen!2sca" width="250" height="220" allowfullscreen="" loading="lazy"></iframe>
             </div>
 
         </footer>
