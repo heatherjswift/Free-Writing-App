@@ -23,50 +23,12 @@ var nextPromptBtn = function() {
 
 var entries = [];
 var savedEntriesWrapperEl = document.querySelector("#savedEntriesWrapper");
+//moment js to determine current date and time
+var date = moment().format("MMMM Do YYYY, h:mm a");
 
-//save entry into localstorage
-var saveEntry = function() {
-    //moment js to determine current date and time
-    var date = moment().format("MMMM Do YYYY, h:mm a");
-    //setting the entries date, text value and prompt used
-    entryDate = date;
-    entryText = document.getElementById("textarea").value.trim();
-    entryPrompt = document.getElementById("prompt").innerHTML.trim();
-
-    //saving to localstorage as a nested array
-    entryInfo = {date: entryDate, text: entryText, prompt: entryPrompt};
-    entries.push(entryInfo);
-    localStorage.setItem("entries", JSON.stringify(entries));
-    recallEntry();
-};
-
-// display saved entries
-var recallEntry = function() {
-    var entries = JSON.parse(localStorage.getItem("entries"));
-    console.log(entries);
-    //if nothing in localstorage
-    if (!entries) {
-        entryInfo = {
-            date: [],
-            text: [],
-            prompt: [],
-        };
-    }
-    console.log(entries);
-    for (var i = 0; i < entries.length; i++) {
-        createEntry(entries[i]);
-        document.getElementById("recalledtext").innerHTML = entries[i].text;
-        var dateEl = document.getElementById("date");
-        var dateNode = document.createTextNode(entries[i].date);
-        dateEl.appendChild(dateNode);
-        document.getElementById("prompt-used").innerHTML = entries[i].prompt;
-    }
-};
-
-var createEntry = function() {   
+var createEntry = function(entryDate, entryText, entryPrompt) {  
     // creating entry card container div element
     var entryCardEl = document.createElement("div");
-    console.log(entryCardEl);    
     $(entryCardEl)
         .addClass("card col")
         .attr("id", "saved-stories");
@@ -78,7 +40,7 @@ var createEntry = function() {
         .addClass("card-header left")
         .attr("id", "date")
         .attr("type", "date")
-  
+        .text(entryDate);
     var entryTextWrapEl = document.createElement("div");
     $(entryTextWrapEl).addClass("card-body left");
     entryCardEl.append(dateEl, entryTextWrapEl);
@@ -88,18 +50,58 @@ var createEntry = function() {
     $(promptEl)
         .addClass("card-title left col-9")
         .attr("id", "prompt-used")
- 
+        .text(entryPrompt);
     var entryTextEl = document.createElement("p");
     $(entryTextEl)
         .addClass("card-text left col-12")
         .attr("id", "recalledtext")
-
+        .text(entryText);
     entryTextWrapEl.append(promptEl, entryTextEl);
-}
+};
+
+//save entry into localstorage
+var saveEntry = function() {
+    localStorage.setItem("entries", JSON.stringify(entries));
+};
+
+// display saved entries
+var recallEntry = function() {
+    console.log(JSON.parse(localStorage.getItem("entries")));
+    var savedEntries = JSON.parse(localStorage.getItem("entries"));
+    //if nothing in localstorage, create placeholder element, if else create elements with saved entries
+    if (!savedEntries) {
+        var entryInfo = {
+            date: [],
+            text: ["Your saved entries will be stored here!"],
+            prompt: [],
+        };
+        createEntry(entryInfo.date, entryInfo.text, entryInfo.prompt);
+    } else {
+        for (var i = 0; i < savedEntries.length; i++) {
+            entries.push(savedEntries[i]);
+        }
+        for (var i = 0; i < entries.length; i++) {
+            createEntry(entries[i].date, entries[i].text, entries[i].prompt);
+        };
+    }
+    console.log(savedEntries);
+    console.log(entries);
+};
 
 document.getElementById("savebutton").onclick = function() {
+    //setting the entries date, text value and prompt used
+    var entryDate = date;
+    var entryText = document.getElementById("textarea").value.trim();
+    var entryPrompt = document.getElementById("prompt").innerHTML.trim();
+    var entryInfo = {date: entryDate, text: entryText, prompt: entryPrompt}
+    console.log(entryInfo);
+
+    entries.push(entryInfo);
     saveEntry();
+    console.log(entries);
+    recallEntry();
 };
+recallEntry();
 
 //image api
 const auth = "563492ad6f917000010000010f961d1f70664d678d52b8dfdfbf0c08";
