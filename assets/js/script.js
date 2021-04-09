@@ -132,7 +132,13 @@ curatedPhotos(pagenr);
 
 //timer(s)
 
-function startTimer(duration, display) {
+function startTimer() {
+    var fiveMinute = 60 * 5,
+    display = document.querySelector('#time');
+    beginTime(fiveMinute, display);
+}
+
+function beginTime(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
         minutes = parseInt(timer / 60, 10);
@@ -148,11 +154,8 @@ function startTimer(duration, display) {
         }
     }, 1000);
 }
-
-function startTimer() {
-    var fiveMinute = 60 * 5,
-    display = document.querySelector('#time');
-    startTimer(fiveMinute, display);
-}
+const startButton = document.getElementById('5-min-btn')
 
 
+
+startButton.addEventListener('click', startTimer)
