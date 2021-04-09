@@ -22,8 +22,7 @@ var nextPromptBtn = function() {
 };
 
 var entries = [];
-
-document.getElementById("savebutton").onclick = function() {saveEntry(), recallEntry()};
+var savedEntriesWrapperEl = document.querySelector("#savedEntriesWrapper");
 
 //save entry into localstorage
 var saveEntry = function() {
@@ -38,29 +37,69 @@ var saveEntry = function() {
     entryInfo = {date: entryDate, text: entryText, prompt: entryPrompt};
     entries.push(entryInfo);
     localStorage.setItem("entries", JSON.stringify(entries));
-
-    //recalling the entry onto the screen
-    document.getElementById("recalledtext").innerHTML = entryText;
-    var dateEl = document.getElementById("date");
-    var dateNode = document.createTextNode(date);
-    dateEl.appendChild(dateNode);
-    document.getElementById("prompt-used").innerHTML = entryPrompt;
+    recallEntry();
 };
 
-//display saved entry
-// var recallEntry = function() {
-//     var entries = JSON.parse(localStorage.getItem("entries"));
-//     console.log(entries);
+// display saved entries
+var recallEntry = function() {
+    var entries = JSON.parse(localStorage.getItem("entries"));
+    console.log(entries);
+    //if nothing in localstorage
+    if (!entries) {
+        entryInfo = {
+            date: [],
+            text: [],
+            prompt: [],
+        };
+    }
+    console.log(entries);
+    for (var i = 0; i < entries.length; i++) {
+        createEntry(entries[i]);
+        document.getElementById("recalledtext").innerHTML = entries[i].text;
+        var dateEl = document.getElementById("date");
+        var dateNode = document.createTextNode(entries[i].date);
+        dateEl.appendChild(dateNode);
+        document.getElementById("prompt-used").innerHTML = entries[i].prompt;
+    }
+};
 
-//     //if nothing in localstorage
-//     if (!entryKey) {
-//         entryInfo = {
-//             date: [],
-//             text: [],
-//             prompt: [],
-//         };
-//     }
-// };
+var createEntry = function() {   
+    // creating entry card container div element
+    var entryCardEl = document.createElement("div");
+    console.log(entryCardEl);    
+    $(entryCardEl)
+        .addClass("card col")
+        .attr("id", "saved-stories");
+    savedEntriesWrapperEl.append(entryCardEl);    
+    
+    // creating date and another nester container element
+    var dateEl = document.createElement("div");
+    $(dateEl)
+        .addClass("card-header left")
+        .attr("id", "date")
+        .attr("type", "date")
+  
+    var entryTextWrapEl = document.createElement("div");
+    $(entryTextWrapEl).addClass("card-body left");
+    entryCardEl.append(dateEl, entryTextWrapEl);
+
+    // creating heading and text entry elements
+    var promptEl = document.createElement("h4");
+    $(promptEl)
+        .addClass("card-title left col-9")
+        .attr("id", "prompt-used")
+ 
+    var entryTextEl = document.createElement("p");
+    $(entryTextEl)
+        .addClass("card-text left col-12")
+        .attr("id", "recalledtext")
+
+    entryTextWrapEl.append(promptEl, entryTextEl);
+}
+
+document.getElementById("savebutton").onclick = function() {
+    saveEntry();
+};
 
 //image api
 const auth = "563492ad6f917000010000010f961d1f70664d678d52b8dfdfbf0c08";
