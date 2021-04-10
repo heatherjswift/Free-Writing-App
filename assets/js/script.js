@@ -22,10 +22,17 @@ var nextPromptBtn = function() {
 };
 
 //word api
+var emotionArr = [];
 function fetchWords() {
     $.get( "https://api.datamuse.com/words?rel_jjb=emotion&topics=self&max=10", {mode:"no-cors"}, function( data ) {
         $( ".result" ).html( data );
         console.log(data);
+        for (var i = 0; i < data.length; i++) {
+            var emotionWords = JSON.stringify(data[i].word);
+            console.log(emotionWords);        
+            emotionArr.push(emotionWords);
+        }
+        console.log(emotionArr);
     })
 };
 fetchWords();
@@ -94,8 +101,6 @@ var recallEntry = function() {
             createEntry(entries[i].date, entries[i].text, entries[i].prompt);
         };
     }
-    console.log(savedEntries);
-    console.log({entries});
 };
 
 // eventListener for save button
