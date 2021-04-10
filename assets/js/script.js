@@ -71,12 +71,13 @@ var recallEntry = function() {
     //if nothing in localstorage, create placeholder element, if else create elements with saved entries
     if (!savedEntries) {
         var entryInfo = {
-            date: [],
-            text: ["Your saved entries will be stored here!"],
-            prompt: [],
+            date: ["Your Date of Last Entry"],
+            text: ["Your saved entries will be stored here. You can come back to see them anytime :)"],
+            prompt: ["Your Prompt Used"],
         };
         createEntry(entryInfo.date, entryInfo.text, entryInfo.prompt);
     } else {
+        entries = [];
         for (var i = 0; i < savedEntries.length; i++) {
             entries.push(savedEntries[i]);
         }
@@ -85,7 +86,7 @@ var recallEntry = function() {
         };
     }
     console.log(savedEntries);
-    console.log(entries);
+    console.log({entries});
 };
 
 document.getElementById("savebutton").onclick = function() {
@@ -99,6 +100,7 @@ document.getElementById("savebutton").onclick = function() {
     entries.push(entryInfo);
     saveEntry();
     console.log(entries);
+    $("#savedEntriesWrapper").empty();
     recallEntry();
 };
 recallEntry();
