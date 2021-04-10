@@ -232,6 +232,7 @@ align-self: center;
 justify-content: center;
 background-color: #fed8b1;
 padding: 25px;
+width: 300px;
 flex-wrap: wrap;
 border: 5px dotted white;
 color: black;
