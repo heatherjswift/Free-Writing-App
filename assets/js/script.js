@@ -71,9 +71,9 @@ var recallEntry = function() {
     //if nothing in localstorage, create placeholder element, if else create elements with saved entries
     if (!savedEntries) {
         var entryInfo = {
-            date: [],
-            text: ["Your saved entries will be stored here!"],
-            prompt: [],
+            date: ["Your Date of Last Entry"],
+            text: ["Your saved entries will be stored here. You can come back to see them anytime :)"],
+            prompt: ["Your Prompt Used"],
         };
         createEntry(entryInfo.date, entryInfo.text, entryInfo.prompt);
     } else {
