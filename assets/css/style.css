@@ -27,8 +27,8 @@ header {
 
 header img {
   background-color: #f2a337;
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
   border: 2px solid white;
   margin-right: 10px;
   margin-top: 10px;
@@ -37,6 +37,12 @@ header img {
 
 header h1 {
   float: right;
+  margin-bottom: 0px;
+  height: 73px;
+}
+
+header h1 .display-3 {
+  font-size: 25px;
 }
   
 header nav ul li {
@@ -46,6 +52,9 @@ header nav ul li {
 .topnav {
   background-color: black;
   overflow: hidden;
+  padding-left: 0px;
+  margin-left: auto;
+  margin-right: auto;
   }
 
 .topnav a {
@@ -53,10 +62,10 @@ header nav ul li {
   display: block;
   color:white;
   text-align: center;
-  padding: 10px 25px;
+  padding: 10px 60px;
   text-decoration:none;
   font-weight: 200;
-  font-size: 24px;  
+  font-size: 24px; 
   }
 
 .topnav a:hover {
@@ -255,6 +264,42 @@ display: block;}
 
   .gallery {
   grid-template-columns: repeat(2, 2fr);
+ }
+
+ .gallery img {
+   width: 150px;
+   height: 200px;
+ }
+
+ .jumbotron {
+   display: flex;
+   justify-content: center;
+   text-align: center;
+   float: none;
+ }
+
+ .jumbotron div {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 4px;
+ }
+
+ .jumbotron h1 {
+   margin-bottom: .25rem;
+   height: 37px;
+ }
+
+.jumbotron p {
+   font-size: 20px;
+ }
+
+.topnav ul {
+  padding: 0px;
+}
+
+.topnav a {
+   float: none;
+   padding: 10px 40px;
  }
 
 }
