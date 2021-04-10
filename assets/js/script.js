@@ -77,6 +77,7 @@ var recallEntry = function() {
         };
         createEntry(entryInfo.date, entryInfo.text, entryInfo.prompt);
     } else {
+        entries = [];
         for (var i = 0; i < savedEntries.length; i++) {
             entries.push(savedEntries[i]);
         }
@@ -85,7 +86,7 @@ var recallEntry = function() {
         };
     }
     console.log(savedEntries);
-    console.log(entries);
+    console.log({entries});
 };
 
 document.getElementById("savebutton").onclick = function() {
@@ -99,6 +100,7 @@ document.getElementById("savebutton").onclick = function() {
     entries.push(entryInfo);
     saveEntry();
     console.log(entries);
+    $("#savedEntriesWrapper").empty();
     recallEntry();
 };
 recallEntry();
