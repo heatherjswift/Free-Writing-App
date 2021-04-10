@@ -22,20 +22,19 @@ var nextPromptBtn = function() {
 };
 
 //word api
-var emotionArr = [];
-function fetchWords() {
+function makeNewPrompt() {
     $.get( "https://api.datamuse.com/words?rel_jjb=emotion&topics=self&max=10", {mode:"no-cors"}, function( data ) {
         $( ".result" ).html( data );
-        console.log(data);
         for (var i = 0; i < data.length; i++) {
-            var emotionWords = JSON.stringify(data[i].word);
-            console.log(emotionWords);        
-            emotionArr.push(emotionWords);
+            var emotionWords = (data[i].word);
+            newPrompt = "Describe a time when you have felt " + emotionWords + ".";
+            console.log(newPrompt);
+            promptArray.push(newPrompt);
         }
-        console.log(emotionArr);
+        console.log([promptArray]);
     })
 };
-fetchWords();
+makeNewPrompt();
 
 //saved entries functionality: localstorage + dynamically created DOM
 var entries = [];
