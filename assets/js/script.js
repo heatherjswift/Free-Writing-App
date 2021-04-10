@@ -21,9 +21,19 @@ var nextPromptBtn = function() {
     } 
 };
 
+//word api
+function fetchWords() {
+    $.get( "https://api.datamuse.com/words?rel_jjb=emotion&topics=self&max=10", {mode:"no-cors"}, function( data ) {
+        $( ".result" ).html( data );
+        console.log(data);
+    })
+};
+fetchWords();
+
+//saved entries functionality: localstorage + dynamically created DOM
 var entries = [];
 var savedEntriesWrapperEl = document.querySelector("#savedEntriesWrapper");
-//moment js to determine current date and time
+// moment js to determine current date and time
 var date = moment().format("MMMM Do YYYY, h:mm a");
 
 var createEntry = function(entryDate, entryText, entryPrompt) {  
@@ -59,14 +69,13 @@ var createEntry = function(entryDate, entryText, entryPrompt) {
     entryTextWrapEl.append(promptEl, entryTextEl);
 };
 
-//save entry into localstorage
+// save entry into localstorage
 var saveEntry = function() {
     localStorage.setItem("entries", JSON.stringify(entries));
 };
 
 // display saved entries
 var recallEntry = function() {
-    console.log(JSON.parse(localStorage.getItem("entries")));
     var savedEntries = JSON.parse(localStorage.getItem("entries"));
     //if nothing in localstorage, create placeholder element, if else create elements with saved entries
     if (!savedEntries) {
@@ -84,21 +93,17 @@ var recallEntry = function() {
             createEntry(entries[i].date, entries[i].text, entries[i].prompt);
         };
     }
-    console.log(savedEntries);
-    console.log(entries);
 };
 
+// eventListener for save button
 document.getElementById("savebutton").onclick = function() {
     //setting the entries date, text value and prompt used
     var entryDate = date;
     var entryText = document.getElementById("textarea").value.trim();
     var entryPrompt = document.getElementById("prompt").innerHTML.trim();
     var entryInfo = {date: entryDate, text: entryText, prompt: entryPrompt}
-    console.log(entryInfo);
-
     entries.push(entryInfo);
     saveEntry();
-    console.log(entries);
     recallEntry();
 };
 recallEntry();
