@@ -1,13 +1,14 @@
 body {
   text-align: center;
-  }
+}
 .row {
---bs-gutter-x: unset;
+  --bs-gutter-x: unset;
 }
 .hide {
   display: none;
 }
-  
+/* start header here */
+
 header {
   background-color: black;
   color: white;
@@ -49,13 +50,15 @@ header nav ul li {
   display: inline;
 }
 
+/* start header navigation here */
+
 .topnav {
   background-color: black;
   overflow: hidden;
   padding-left: 0px;
   margin-left: auto;
   margin-right: auto;
-  }
+}
 
 .topnav a {
   float:left;
@@ -66,13 +69,15 @@ header nav ul li {
   text-decoration:none;
   font-weight: 200;
   font-size: 24px; 
-  }
+}
 
 .topnav a:hover {
   border-radius: 25px;
   background-color: #f2a337;
   color: black;
 }
+
+/* Start Journal Prompt Area here */
   
 #StartWriting {
   display:flex;
@@ -87,38 +92,45 @@ header nav ul li {
   color: black;
   align-content: space-around;
       
+}
+
+  #nextPrompt {
+    width: 100px;
+    height:50px;
   }
+
+/* Start journal form here */
 
 .hero-form {
   display: flex;
   align-self: center;
   margin-bottom: 25px;
-      padding: 20px;
-      border: 3px solid black;
-      flex-direction: column;
-      justify-content: center;
-      background-color: #f2a337;
-      color: black;
-      align-content: space-around;
-      width: 90%;
-    }
+  padding: 20px;
+  border: 3px solid black;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f2a337;
+  color: black;
+  align-content: space-around;
+  width: 90%;
+}
 
   textarea {
-      background-color: #fef0e2;
-      color: black;
-      height: 250px;
-      padding: 50px;
-      margin-bottom: 20px;
-      border: 2px solid #cccccc;
-      padding: 5px;
-      font-family: Tahoma, sans-serif;
-      overflow:auto;
-      -moz-box-shadow:    inset 0 0 10px #000000;
-      -webkit-box-shadow: inset 0 0 10px #000000;
-      box-shadow:         inset 0 0 10px #000000;
-    }
+  background-color: #fef0e2;
+  color: black;
+  height: 250px;
+  padding: 50px;
+  margin-bottom: 20px;
+  border: 2px solid #cccccc;
+  padding: 5px;
+  font-family: Tahoma, sans-serif;
+  overflow:auto;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+  }
 
-  .btn {
+.btn {
     color: black;
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
@@ -128,21 +140,11 @@ header nav ul li {
     border: 2px solid black;
     border-radius: 0.5rem;
     box-shadow: 2px 5px;
-    }
+}
 
-    .btn:hover {
-      background: black;
-      color: #f2a337; 
-      }
-
-  #nextPrompt {
-    width: 100px;
-    height:50px;
-  }
-
-  #inspBtn {
-    background: #f2a337;
-    box-shadow: 2px 5px; color: #fed8b1;
+  .btn:hover {
+     background: black;
+     color: #f2a337; 
   }
 
   /* inspiration section start */
@@ -154,30 +156,38 @@ header nav ul li {
     }
   
   /* all section titles */
-  .title {
+.title {
     padding-top: 45px;
     color: white;
     text-decoration: black;
-  }
+}
+
+  /* start inspiration search bar here */
   
-  #search-text {
+#search-text {
     -moz-box-shadow:    inset 0 0 10px #000000;
     -webkit-box-shadow: inset 0 0 10px #000000;
     box-shadow:         inset 0 0 10px #000000;
     font-family: Tahoma, sans-serif;
-  }
-  
-  img, svg {
-    vertical-align: unset;
-  }
+}
 
-  #inspImgEl {
+#inspBtn {
+    background: #f2a337;
+    box-shadow: 2px 5px; color: #fed8b1;
+}
+  
+  /* start inspiration image gallery here */
+
+img, svg {
+    vertical-align: unset;
+}
+
+#inspImgEl {
     flex: 1 0 20%;
     margin-bottom: 25px;
-  } 
+} 
 
-
-  .gallery {
+.gallery {
     width: 90%;
     margin: 12vh 50%;
     transform: translateX(-50%);
@@ -186,26 +196,27 @@ header nav ul li {
     row-gap: 10px;
     column-gap: 10px;
     justify-content: center;
-  }
+}
 
-  .gallery div {
+.gallery div {
     position: relative;
-  }
+}
 
-  .gallery img {
+.gallery img {
     margin-left: 5px;
     height: 300px;
     width: 200px;
     object-fit: cover;
     object-position: center;
     cursor: pointer;
-  }
+}
 
-  .gallery p {
+.gallery p {
     color: white;
-  }
+}
 
   /* inspiration section end */
+
   /* saved section start */
 
   #saved-stories {
@@ -215,26 +226,38 @@ header nav ul li {
     border: 2px solid black;
   }
   
-  #savedSect {
+#savedSect {
     width: 80%;
     margin: auto;
     border: 2px solid black;
-  }
+}
 
-  #date {
+#date {
     background-color: #fed8b1;
-  }
+}
   
-  .left {
+.left {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-  }
-
-  #contact-us h3 {
-  justify-content: center;
 }
 
+/* start footer section here */
+
+#contact-us {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  background-color: #fed8b1;
+  padding: 25px;
+  width: 300px;
+  flex-wrap: wrap;
+  border: 5px dotted white;
+  color: black;
+  align-content: space-around;
+}
+
+<<<<<<< HEAD
   #contact-us {
 display: flex;
 align-self: center;
@@ -249,8 +272,13 @@ align-content: space-around;
   }
 
   .footer {
+=======
+.footer {
+>>>>>>> 9b464e596521099d8ad8f9b3ed4bddd4f14c3849
 float: left;
 }
+
+/* Insert media queries here */
 
   @media screen and (max-width:600px) {
 .topnav a:not(:first-child) {display: none;}
@@ -263,7 +291,7 @@ display: block;}
 .topnav.responsive a.icon {position:absolute;right: 0;top: 0;}
 .topnav.responsive a {float:none; display: block; text-align: left;}
 
-  .gallery {
+ .gallery {
   grid-template-columns: repeat(2, 2fr);
  }
 
@@ -303,4 +331,4 @@ display: block;}
    padding: 10px 40px;
  }
 
-}
+/* end media queries here */
