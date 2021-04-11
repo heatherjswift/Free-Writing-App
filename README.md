@@ -26,7 +26,7 @@ GIVEN I am using a journal with prompts for creative writing
 * HTML
 * CSS
 * JavaScript
-* Bootstrap
+* Bootstrap & Fontawesome
 * Pexels API
 * Word API
 
