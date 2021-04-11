@@ -13,25 +13,27 @@ document.getElementById('prompt').innerHTML = promptArray[userPrompt];
 document.getElementById("nextPrompt").onclick = function () {nextPromptBtn()}
 
 var nextPromptBtn = function() {
-    userPrompt++;
+    userPrompt = 1 + Math.floor(Math.random() * promptArray.length - 1);
     document.getElementById('prompt').innerHTML = promptArray[userPrompt];
-    
-    if (userPrompt === 5) {
-      userPrompt=-1;
-    } 
 };
 
 //word api
 function makeNewPrompt() {
-    $.get( "https://api.datamuse.com/words?rel_jjb=emotion&topics=self&max=10", {mode:"no-cors"}, function( data ) {
+    $.get( "https://api.datamuse.com/words?rel_jjb=emotion&topics=self&max=4", {mode:"no-cors"}, function( data ) {
         $( ".result" ).html( data );
         for (var i = 0; i < data.length; i++) {
-            var emotionWords = (data[i].word);
-            newPrompt = "Describe a time when you have felt " + emotionWords + ".";
-            console.log(newPrompt);
+            var emotionWord = (data[i].word);
+            newPrompt = "Describe a time when you have felt " + emotionWord + ".";
             promptArray.push(newPrompt);
         }
-        console.log([promptArray]);
+    })
+    $.get( "https://api.datamuse.com/words?ml=zoo+animal&max=3", {mode:"no-cors"}, function( data ) {
+        $( ".result" ).html( data );
+        for (var i = 0; i < data.length; i++) {
+            var animalWord = (data[i].word);
+            newPrompt = "You woke up as a " + animalWord + ". Tell your family about it.";
+            promptArray.push(newPrompt);
+        }
     })
 };
 makeNewPrompt();
