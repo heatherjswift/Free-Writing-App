@@ -15,13 +15,8 @@
                 background-repeat:no-repeat;
                background-size:cover;
         } 
-        
-        input:focus, textarea:focus, select:focus{
-        outline: none;
-         }
     </style>
 </head>
-
 
 <body>
     <!-- start header here -->
@@ -35,6 +30,7 @@
         <p id="lead">Let your creativity run wild!</p>
 
         <nav class="topnav" id="myTopnav">
+
             <!-- Unordered list element -->
             <ul>
               <!-- List item element-->
@@ -46,7 +42,7 @@
                 <a href="#inspSect">Inspiration Board</a>
               </li>
               <li>
-                <a href="#savedEntries">Saved Stories</a>
+                <a href="#savedEntriesWrapper">Saved Stories</a>
               </li>
               <li>
                 <a href="#contact-us">Contact Us</a>
@@ -59,11 +55,12 @@
     <!-- end header here -->
 
    
-    <!-- start Prompt & Textarea here -->
+    <!-- start journal area here -->
     <div id="StartWriting" class="container">
         
         <!-- start prompter here -->
         <div class="box">
+            <br>
             <h5 id="prompt">    
             </h5>
             <button id="nextPrompt" class="btn"><span class="front"><i class="fa fa-refresh"></i></span></button>
@@ -78,7 +75,7 @@
 
         <!-- start textarea here -->
         <div class="hero-form d-flex">
-            <textarea spellcheck="true"id="textarea" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Start writing here! Try to write for 5 minutes straight, repeating your last word or um until you think of what to write next! Don't censor yourself, let your creativity run wild!"></textarea>
+            <textarea spellcheck="true"id="textarea" placeholder="&nbsp;Start writing here! Try to write for 5 minutes straight, repeating your last word or 'um' until you think of what to write next! Don't censor yourself - let your creativity run wild!"></textarea>
             <button id="savebutton" class="btn"><span class="front"><i class="fa fa-save"></i></span></button>
         </div>
 
@@ -110,21 +107,24 @@
 
         </div>
     </div>
+
     <!-- end saved section -->
+
+    <!-- start footer here -->
 
     <div class="container">
 
         <h2 class="display-3 title">Contact Us!</h2>
        
-        <footer id="contact-us" class="col-6 container">
+        <footer id="contact-us" class="col-md container">
             <div class="footer">
-             <p>Any Concerns? <br> Reach out to us!<br><br>
-               <u>Just Write:</u><br>
+             <p>Reach out to us!<br><br>
+                <u>Just Write:</u><br>
                290 Bremner Blvd, <br>
                Toronto, ON <br>
                M5V 3L9<br>
-               P: 647 111 1111<br>
-               E: <a href="mailto:info@justwrite.ca">info@justwrite.ca</a>
+               E: <a href="mailto:info@justwrite.ca">info@justwrite.ca</a><br>
+               Instagram:<a href="https://instagram.com/justwrite">@justwrite</a>
              </p>
             </div>
 
@@ -133,6 +133,9 @@
 
     </div>
 
+    <!-- End footer here -->
+
+    <!-- start JS tags here -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
