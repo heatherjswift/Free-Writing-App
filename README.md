@@ -52,7 +52,8 @@ https://heatherjswift.github.io/Just-Write/
 *	Users can vote on stories
 *	Users can search their prompt to see what other people have come up with
 
-
+## References
+Pexels API build: KodAktif video Egitim, youtube video https://www.youtube.com/watch?v=1OZPeoylatM
 
 ## Created By
 Group 3: Ulemjin Badral, Kyle Barrer, Samia Ferdous and Heather Swift.    
