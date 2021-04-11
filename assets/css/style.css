@@ -235,6 +235,10 @@ header nav ul li {
   justify-content: center;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> main
   #contact-us {
 display: flex;
 align-self: center;
@@ -243,11 +247,21 @@ background-color: #fed8b1;
 padding: 25px;
 flex-wrap: wrap;
 border: 5px dotted white;
+<<<<<<< HEAD
+=======
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+>>>>>>> main
 color: black;
 align-content: space-around;
   }
 
   .footer {
+<<<<<<< HEAD
+=======
+=======
+.footer {
+>>>>>>> 9b464e596521099d8ad8f9b3ed4bddd4f14c3849
+>>>>>>> main
 float: left;
 }
 
